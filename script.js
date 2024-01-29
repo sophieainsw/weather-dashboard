@@ -1,4 +1,3 @@
-var apiKey = ${{ secrets.WAPIKEY }};
 function fetchWeatherData(cityName) {
 
   var geoLocation = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + apiKey;
