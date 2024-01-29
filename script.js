@@ -1,7 +1,7 @@
-
+var apiKey = ${{ secrets.WAPIKEY }};
 function fetchWeatherData(cityName) {
 
-  var geoLocation = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=61f330dba4f57ef74ff9bbf61009b929";
+  var geoLocation = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + apiKey;
 
   fetch(geoLocation)
     .then(function (response) {
@@ -10,7 +10,7 @@ function fetchWeatherData(cityName) {
     .then(function (data) {
       var cityLat = data[0].lat;
       var cityLon = data[0].lon;
-      var cityWeather = "https://api.openweathermap.org/data/2.5/forecast?lat=" + cityLat + "&lon=" + cityLon + "&appid=61f330dba4f57ef74ff9bbf61009b929";
+      var cityWeather = "https://api.openweathermap.org/data/2.5/forecast?lat=" + cityLat + "&lon=" + cityLon + "&appid=" + apiKey;;
       fetch(cityWeather)
         .then(function (response) {
           return response.json();
