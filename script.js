@@ -1,5 +1,7 @@
 function fetchWeatherData(cityName) {
+
   var geoLocation = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=61f330dba4f57ef74ff9bbf61009b929";
+
   fetch(geoLocation)
     .then(function (response) {
       return response.json();
@@ -18,7 +20,7 @@ function fetchWeatherData(cityName) {
     });
 }
 
-function updateDOM(cityName, data, weather) {
+function updateDOM(data, weather) {
 
   $("#today").empty();
   $("#forecast").empty();
